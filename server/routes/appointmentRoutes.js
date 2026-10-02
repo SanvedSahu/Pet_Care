@@ -5,9 +5,12 @@ const {
   getMyAppointments,
   getProviderAppointments,
   updateAppointmentStatus,
+  getBookedSlots,
 } = require('../controllers/appointmentController');
 const { protect } = require('../middleware/authMiddleware');
 const { authorize } = require('../middleware/roleMiddleware');
+
+router.get('/booked-slots', getBookedSlots);
 
 router.use(protect);
 

@@ -288,9 +288,38 @@ const updateAppointmentStatus = async (req, res, next) => {
   }
 };
 
+// @desc    Get booked time slots for a provider on a given date
+// @route   GET /api/appointments/booked-slots
+// @access  Public / Private
+const getBookedSlots = async (req, res, next) => {
+  try {
+    const { providerId, date } = req.query;
+    if (!providerId || !date) {
+      return errorResponse(res, 400, 'Please provide providerId and date');
+    }
+
+    const dayStart = new Date(date);
+    dayStart.setHours(0, 0, 0, 0);
+    const dayEnd = new Date(date);
+    dayEnd.setHours(23, 59, 59, 999);
+
+    const appointments = await Appointment.find({
+      provider: providerId,
+      date: { $gte: dayStart, $lte: dayEnd },
+      status: { $in: ['Pending', 'Confirmed'] },
+    }).select('time');
+
+    const bookedSlots = appointments.map((a) => a.time);
+    return successResponse(res, 200, 'Booked slots retrieved successfully', bookedSlots);
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   bookAppointment,
   getMyAppointments,
   getProviderAppointments,
   updateAppointmentStatus,
+  getBookedSlots,
 };
