@@ -416,6 +416,40 @@ All API endpoints return a consistent JSON response:
 
 ---
 
+## 👥 Team Work Breakdown & GitHub Issues Board
+
+The project tasks have been divided among the core engineering team and tracked as active GitHub Issues:
+
+### 🛡️ Sanved Sahu ([@SanvedSahu](https://github.com/SanvedSahu)) — Core Backend, Auth & Admin Governance
+| Issue # | Phase & Title | Focus Areas | Labels |
+| :---: | :--- | :--- | :--- |
+| [#1](https://github.com/SanvedSahu/Pet_Care/issues/1) | **Phase 1: Backend Infrastructure & Models** | Express setup, MongoDB connection, Mongoose schemas (`User`, `Pet`, `ProviderProfile`, `Service`, `Appointment`, `Notification`). | `backend`, `database` |
+| [#4](https://github.com/SanvedSahu/Pet_Care/issues/4) | **Phase 2: JWT Auth & RBAC Middleware** | bcrypt password hashing, JWT generation, `authMiddleware`, `roleMiddleware`, Auth APIs (`/api/auth`). | `backend`, `auth` |
+| [#7](https://github.com/SanvedSahu/Pet_Care/issues/7) | **Phase 3: Admin Management & Analytics** | Admin dashboard APIs, Provider approval workflow (`approve`, `reject`, `suspend`), User moderation, Admin UI. | `backend`, `frontend`, `admin` |
+| [#10](https://github.com/SanvedSahu/Pet_Care/issues/10) | **Phase 4: Database Seeder & Demo QA** | Automated seeder (`seedData.js`, `seeder.js`), 22-step end-to-end verification walkthrough. | `backend`, `documentation` |
+
+---
+
+### 🎨 Anushka ([@Anushka0431](https://github.com/Anushka0431)) — Frontend Lead, Marketplace & Pet Owner Portal
+| Issue # | Phase & Title | Focus Areas | Labels |
+| :---: | :--- | :--- | :--- |
+| [#2](https://github.com/SanvedSahu/Pet_Care/issues/2) | **Phase 1: Frontend Shell & Navigation** | Vite setup, Tailwind design tokens, `Navbar`, `Footer`, universal `Badge`, layout wrappers, routing guards. | `frontend` |
+| [#5](https://github.com/SanvedSahu/Pet_Care/issues/5) | **Phase 2: Public Marketplace & Discovery** | Landing page, How It Works, Find Services marketplace with category/city/rating filters, Provider profile. | `frontend` |
+| [#8](https://github.com/SanvedSahu/Pet_Care/issues/8) | **Phase 3: Pet Owner Portal & Pets CRUD** | Pet APIs (`/api/pets`), Owner Dashboard, My Pets grid, Add/Edit/Delete Pet modals with medical notes & vaccines. | `frontend`, `backend` |
+| [#11](https://github.com/SanvedSahu/Pet_Care/issues/11) | **Phase 4: Multi-Step Booking Wizard** | 4-step booking modal (Service ➔ Pet ➔ Date & Slot ➔ Reason ➔ Price confirmation), slot collision handling. | `frontend` |
+
+---
+
+### ⚙️ Sarthak ([@SarthakM28](https://github.com/SarthakM28)) — Provider Portal Lead, Booking Conflict Engine & Alerts
+| Issue # | Phase & Title | Focus Areas | Labels |
+| :---: | :--- | :--- | :--- |
+| [#3](https://github.com/SanvedSahu/Pet_Care/issues/3) | **Phase 1: Service Catalog & Services UI** | Service catalog APIs (`/api/services`), Provider `MyServicesPage.jsx`, Add/Edit/Delete service modal. | `backend`, `frontend` |
+| [#6](https://github.com/SanvedSahu/Pet_Care/issues/6) | **Phase 2: Booking Engine & Conflict Logic** | 6-gate booking validation, double-booking collision detection, past-date prevention, server price lock. | `backend` |
+| [#9](https://github.com/SanvedSahu/Pet_Care/issues/9) | **Phase 3: Provider Dashboard & Actions** | Provider operational dashboard, booking list, Accept / Reject / Complete status transitions. | `backend`, `frontend` |
+| [#12](https://github.com/SanvedSahu/Pet_Care/issues/12) | **Phase 4: In-App Notifications & History** | Notification engine (`/api/notifications`), unread badge, Pet Owner appointment history tabs & cancellation. | `backend`, `frontend` |
+
+---
+
 ## 📄 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
